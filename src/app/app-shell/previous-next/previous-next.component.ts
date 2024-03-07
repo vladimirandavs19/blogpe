@@ -13,7 +13,7 @@ import { MetaModel } from '../../models/meta-model';
 })
 export class PreviousNextComponent implements OnInit{
   ngOnInit(): void {
-    console.log("Meta enviado", this.meta.next_post);
+    
   }
   @Input({required: true}) meta!: MetaModel;
 

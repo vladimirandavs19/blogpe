@@ -27,7 +27,6 @@ export class IndividualPostComponent implements OnInit{
     this.butter.getPost(slug ?? '').subscribe((resp: any) => {
       this.post = resp;
       this.data = resp.data;
-      console.log("Post enviado", this.post);
     });
   }
 
