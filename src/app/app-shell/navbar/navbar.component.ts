@@ -2,6 +2,7 @@ import { Component, ElementRef, ViewChild, viewChild } from '@angular/core';
 import { MenuModel } from '../../models/menu-model';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { MenuService } from '../../services/menu.service';
 
 @Component({
   selector: 'app-navbar',
@@ -15,8 +16,11 @@ import { CommonModule } from '@angular/common';
 })
 export class NavbarComponent {
   modal: boolean = false;
+  menus: MenuModel[];
   @ViewChild('searchquery') search!: ElementRef;
-
+  constructor(private menuService: MenuService) {
+    this.menus = this.menuService.getMenus();
+  }
   abrirModal() {
     this.modal = true;
     setTimeout(() => {
@@ -27,18 +31,4 @@ export class NavbarComponent {
   cerrarModal() {
     this.modal = false;
   }
-  menus: MenuModel[] = [
-    {
-      title: 'Inicio',
-      link: ''
-    },
-    {
-      title: 'Nosotros',
-      link: 'about'
-    },
-    {
-      title: 'Contacto',
-      link: 'contact'
-    }
-  ]
 }

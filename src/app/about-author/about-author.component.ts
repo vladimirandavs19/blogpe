@@ -18,7 +18,6 @@ export class AboutAuthorComponent {
   constructor(private butter: ButterService) {
     this.butter.getAuthor(this.slug).subscribe((resp: any) => {
       this.author = resp.data;
-      console.log("Author enviado", resp);
     });
   }
 }

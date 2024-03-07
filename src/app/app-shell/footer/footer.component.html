@@ -7,33 +7,30 @@
             class="img-fluid"
             width="150px"
             src="images/logo.png"
-            alt="LogBook"
+            alt="Programacion Ecuador"
           />
         </a>
         <p>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-          sed diam voluptua.
+          "Programación Ecuador" es un blog dedicado al desarrollo de software en Ecuador. En él, exploramos diversos temas relacionados con la programación, desde tutoriales y guías prácticas hasta análisis de tendencias y noticias relevantes en el mundo de la tecnología.
         </p>
       </div>
 
       <div class="col-lg-2 col-md-3 col-6 mb-4">
-        <h6 class="mb-4">Quick Links</h6>
+        <h6 class="mb-4">Menu</h6>
         <ul class="list-unstyled footer-list">
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="privacy-policy.html">Privacy Policy</a></li>
-          <li><a href="terms-conditions.html">Terms Conditions</a></li>
+          @for (menu of menus; track $index) {
+            <li><a [href]="menu.link">{{menu.title}}</a></li>
+          }
         </ul>
       </div>
 
       <div class="col-lg-2 col-md-3 col-6 mb-4">
         <h6 class="mb-4">Social Links</h6>
         <ul class="list-unstyled footer-list">
-          <li><a href="#">facebook</a></li>
-          <li><a href="#">twitter</a></li>
-          <li><a href="#">linkedin</a></li>
-          <li><a href="#">github</a></li>
+          <li><a [href]="author.facebook_url" *ngIf="author.facebook_url !== ''"><i class="fa-brands fa-square-facebook"></i> Facebook</a></li>
+          <li><a [href]="author.twitter_handle" *ngIf="author.twitter_handle !== ''"><i class="fa-brands fa-square-x-twitter"></i> Twitter</a></li>
+          <li><a [href]="author.linkedin_url" *ngIf="author.linkedin_url"><i class="fa-brands fa-linkedin"></i> Linkedin</a></li>
+          <li><a href="https://github.com/vladimirandavs19"><i class="fa-brands fa-square-github"></i> Github</a></li>
         </ul>
       </div>
 
@@ -54,8 +51,14 @@
         </form>
       </div>
     </div>
+    <div class="row">
+      <div class="col-md-12">
+        <h4>Este blog ha sido realizado con la ayuda de</h4>
+        <img src="https://cdn.buttercms.com/PGJPyIwaQ2KnOA8UyKfH" alt="buttercms" width="300px" />
+      </div>
+    </div>
     <div class="scroll-top">
-      <a href="javascript:void(0);" id="scrollTop"
+      <a id="scrollTop" (click)="scrollToTop();"
         ><i class="ti-angle-up"></i
       ></a>
     </div>
