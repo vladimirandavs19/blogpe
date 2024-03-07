@@ -1,0 +1,12 @@
+<div class="widget">
+  <h5 class="widget-title"><span>Categories</span></h5>
+  <ul class="list-unstyled widget-list">
+    @for (category of categories; track $index) {
+      <li>
+        <a href="#!" class="d-flex"
+          >{{category.name}} <small class="ml-auto">({{category.count}})</small></a
+        >
+      </li>
+    }
+  </ul>
+</div>

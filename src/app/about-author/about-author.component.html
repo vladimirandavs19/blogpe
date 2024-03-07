@@ -1,0 +1,27 @@
+<section class="section-sm border-bottom">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="title-bordered mb-5 d-flex align-items-center">
+					<h1 class="h4">{{author.first_name}} {{author.last_name}}</h1>
+					<ul class="list-inline social-icons ml-auto mr-3 d-none d-sm-block">
+						<li class="list-inline-item" *ngIf="author.facebook_url !== ''" ><a href="#"><i class="ti-facebook"></i></a>
+						</li>
+						<li class="list-inline-item" *ngIf="author.twitter_handle" ><a [href]="author.twitter_handle"><i class="ti-twitter-alt"></i></a>
+						</li>
+						<li class="list-inline-item" *ngIf="false"><a href="#"><i class="ti-github"></i></a>
+						</li>
+            <li class="list-inline-item" *ngIf="author.linkedin_url"><a [href]="author.linkedin_url"><i class="fa-brands fa-linkedin"></i></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-4 mb-4 mb-md-0 text-center text-md-left">
+				<img loading="lazy" class="rounded-lg img-fluid" [src]="author.profile_image">
+			</div>
+			<div class="col-lg-9 col-md-8 content text-center text-md-left">
+				<p>{{author.bio}}</p>
+			</div>
+		</div>
+	</div>
+</section>

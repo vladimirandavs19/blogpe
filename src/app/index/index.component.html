@@ -1,0 +1,23 @@
+
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mb-5 mb-lg-0">
+        @for (item of post.data; track $index) {
+          <app-article [post]="item" ></app-article>
+        }
+      </div>
+      <aside class="col-lg-4">
+        <!-- Search -->
+        <app-search></app-search>
+        <!-- categories -->
+        <app-categories [categories]="consultarCategorias(post.data)"></app-categories>
+        <!-- tags -->
+        <app-tags [tags]="consultarTag(post.data)"></app-tags>
+        <!-- latest post -->
+        <app-latest-post [recentPost]="post.data"></app-latest-post>
+      </aside>
+    </div>
+  </div>
+</section>
+

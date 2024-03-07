@@ -1,0 +1,2 @@
+<a [href]="['post/'+meta.previous_post.slug]" class="btn btn-outline-primary mb-3" *ngIf="meta.previous_post" ><i class="fa-solid fa-angles-left"></i> {{meta.previous_post.title}}</a>
+<a [href]="['post/'+meta.next_post.slug]" class="btn btn-outline-success mb-3 float-right" *ngIf="meta.next_post"  >{{meta.next_post.title}} <i class="fa-solid fa-angles-right"></i></a>

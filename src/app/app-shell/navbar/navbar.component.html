@@ -1,0 +1,33 @@
+<header class="sticky-top bg-white border-bottom border-default">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-white">
+       <a class="navbar-brand" href="">
+        Programacion Ecuador
+       </a>
+       <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
+          <i class="ti-menu"></i>
+       </button>
+
+       <div class="collapse navbar-collapse text-center" id="navigation">
+          <ul class="navbar-nav ml-auto">
+            @for (menu of menus; track $index) {
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="[menu.link]" [routerLinkActive]="['active']" >{{menu.title}}</a>
+             </li>
+            }
+          </ul>
+          <!-- search -->
+          <div class="search px-4">
+             <button id="searchOpen" class="search-btn" (click)="abrirModal();"><i class="ti-search"></i></button>
+             <div class="search-wrapper" [ngClass]="{'open': modal}" #wrapper>
+                <form action="javascript:void(0)" class="h-100">
+                   <input class="search-box pl-4" id="search-query" #searchquery name="s" type="search" placeholder="Type &amp; Hit Enter...">
+                </form>
+                <button id="searchClose" #wrapperclose class="search-close" (click)="cerrarModal()"><i class="ti-close text-dark"></i></button>
+             </div>
+          </div>
+       </div>
+    </nav>
+  </div>
+  </header>
+  <!-- /navigation -->

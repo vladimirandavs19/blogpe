@@ -1,0 +1,26 @@
+<article class="row mb-5">
+  <div class="col-12">
+    <div class="post-slider">
+      <img
+        loading="lazy"
+        [src]="post.featured_image"
+        class="img-fluid"
+        alt="post-thumb"
+      />
+    </div>
+  </div>
+  <div class="col-12 mx-auto">
+    <h3>
+      <a class="post-title" [routerLink]="['/post', post.slug]"
+        >{{post.title}}</a
+      >
+    </h3>
+    <app-post-information [tag]="post.tags" [categories]="post.categories" [author]="post.author" [published]="post.published" ></app-post-information>
+    <p>
+      {{post.summary | slice:0:300}}
+    </p>
+    <a [routerLink]="['/post', post.slug]" routerLinkActive="router-link-active"  class="btn btn-outline-info"
+      >Seguir Leyendo <i class="fa-solid fa-circle-plus"></i></a
+    >
+  </div>
+</article>
