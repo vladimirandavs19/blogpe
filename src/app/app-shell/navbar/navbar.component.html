@@ -21,7 +21,7 @@
              <button id="searchOpen" class="search-btn" (click)="abrirModal();"><i class="ti-search"></i></button>
              <div class="search-wrapper" [ngClass]="{'open': modal}" #wrapper>
                 <form action="javascript:void(0)" class="h-100">
-                   <input class="search-box pl-4" id="search-query" #searchquery name="s" type="search" placeholder="Type &amp; Hit Enter...">
+                   <input class="search-box pl-4" id="search-query" #searchquery name="s" type="search" placeholder="Type &amp; Hit Enter..." (keyup.enter)="busquedaGeneral(searchquery.value);">
                 </form>
                 <button id="searchClose" #wrapperclose class="search-close" (click)="cerrarModal()"><i class="ti-close text-dark"></i></button>
              </div>

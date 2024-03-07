@@ -1,12 +1,13 @@
 <div class="widget">
   <h5 class="widget-title"><span>Search</span></h5>
-  <form action="/logbook-hugo/search" class="widget-search">
+  <div class="widget-search">
     <input
       id="search-query"
+      #searchquery
       name="s"
       type="search"
       placeholder="Type &amp; Hit Enter..."
     />
-    <button type="submit"><i class="ti-search"></i></button>
-  </form>
+    <button type="button" (click)="buscar()"><i class="ti-search"></i></button>
+  </div>
 </div>
