@@ -22,4 +22,8 @@ export class ButterService {
   getAuthor(slug: string): Observable<PostModel>{
     return this.http.get<PostModel>(`${environment.api}/authors/${slug}/?include=recent_posts&auth_token=${environment.token}`);
   }
+
+  getPostsByName(name: string, slug: string): Observable<PostModel>{
+    return this.http.get<PostModel>(`${environment.api}/${name}/${slug}/?include=recent_posts&auth_token=${environment.token}`);
+  }
 }
