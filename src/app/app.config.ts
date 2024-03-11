@@ -1,5 +1,5 @@
 import { ApplicationConfig } from '@angular/core';
-import { provideRouter, withRouterConfig } from '@angular/router';
+import { provideRouter, withHashLocation, withRouterConfig } from '@angular/router';
 
 import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
@@ -9,6 +9,5 @@ export const appConfig: ApplicationConfig = {
   providers: [provideRouter(routes, withRouterConfig({
     paramsInheritanceStrategy: 'always',
     onSameUrlNavigation: 'reload',
-    
-  })), provideClientHydration(), provideHttpClient(withFetch())]
+  }), withHashLocation()), provideClientHydration(), provideHttpClient(withFetch())]
 };
