@@ -2,7 +2,7 @@
   <h5 class="widget-title"><span>Tags</span></h5>
   <ul class="list-inline widget-list-inline">
     @for (tag of tags; track $index) {
-      <li class="list-inline-item"><a href="#!">{{tag.name}}</a></li>
+      <li class="list-inline-item"><a [routerLink]="['/search','tags', tag.slug]" routerLinkActive="router-link-active" >{{tag.name}}</a></li>
     }
   </ul>
 </div>

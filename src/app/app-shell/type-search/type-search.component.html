@@ -1,0 +1,15 @@
+<div class="row container p-3 ml-0">
+    <h4><i class="fa-solid fa-filter"></i> Estas viendo {{nombre}} - {{posts.name}} </h4>
+</div>
+<div class="card-columns p-2">
+    @for (post of posts.recent_posts; track $index) {
+        <div class="card">
+          <img class="card-img-top" [src]="post.featured_image" [alt]="post.featured_image_alt">
+          <div class="card-body">
+            <h5 class="card-title">{{post.title}}</h5>
+            <p class="card-text">{{post.summary}}</p>
+            <a [routerLink]="['/post', post.slug]" routerLinkActive="router-link-active" class="btn btn-outline-primary">Seguir Leyendo <i class="fa-solid fa-circle-plus"></i></a>
+          </div>
+        </div>
+    }
+  </div>
